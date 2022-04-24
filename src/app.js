@@ -3,6 +3,8 @@ const express= require('express')
 const app = express()
 const hbs = require('hbs')
 const { dirname } = require('path')
+require("dotenv").config();
+const port = process.env.PORT || 3000
 
 const publicIndexPath = path.join(__dirname,'../public/css')
 const jsPath = path.join(__dirname,'../public')
@@ -105,6 +107,6 @@ app.get('*',(req,res)=>{
 })
 
 
-app.listen(3000,()=>{
-    console.log('server is up and running')
+app.listen(port,()=>{
+    console.log('server is up and running on port '+port)
 })
